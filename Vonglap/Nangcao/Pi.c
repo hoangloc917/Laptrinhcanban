@@ -4,17 +4,18 @@ int main ()
 {
     double epsilon;
     scanf("%lf",&epsilon);
-    double tong = 0.0;
-    double mau_so = 1.0;
-    double dau = 1.0;
-    double so_hang = 1.0 / mau_so;
-    while (so_hang>=epsilon){
-        tong+=dau*so_hang;
-        mau_so+=2;
-        dau=-dau;
-        so_hang=1.0/mau_so;
+   int n=0;
+   double pi=0.0;
+   double t=4.0/(2*n+1);
+   while (t>epsilon){
+    if (n%2==0){
+        pi=pi+t;
+    } else{
+        pi=pi-t;
     }
-    double pi=4*tong;
+    n+=1;
+    t=4.0/(2*n+1);
+   }
     printf("pi = %.8lf",pi);
     return 0;
 }
