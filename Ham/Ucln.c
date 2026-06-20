@@ -13,8 +13,8 @@ int GCD(int a,int b){
                 return i;
             }
         }
+         return 1;
     }
-
 }
 int main ()
 {
