@@ -14,7 +14,7 @@ void Insert(char str[], char c, int p)
     str[p] = c;
 }
 int main()
-{
+{ 
     char str[500];
     fgets(str, 500, stdin);
     printf("%s", str);
