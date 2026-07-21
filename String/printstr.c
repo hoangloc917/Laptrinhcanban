@@ -1,24 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+void deletespace(char str[])
+{
+    if (str[strlen(str) - 1] == '\n')
+    {
+        str[strlen(str) - 1] = '\0';
+    }
+}
 void print(char dulieu[], int len)
 {
-    int k = 0;
+    int in_word = 0;
     char *tu = (char *)malloc((len + 1) * sizeof(char));
-    for (int i = 0; i <= len; i++)
+    for (int i = 0; dulieu[i] != '\0'; i++)
     {
-        if (i < len && dulieu[i] != ' ')
+        if (dulieu[i] != ' ')
         {
-            tu[k] = dulieu[i];
-            k++;
+            tu[in_word] = dulieu[i];
+            in_word++;
         }
         else
         {
-            if (k > 0)
+            if (in_word > 0)
             {
-                tu[k] = '\0';
+                tu[in_word] = '\0';
                 printf("%s\n", tu);
-                k = 0;
+                in_word = 0;
             }
         }
     }
@@ -28,12 +35,8 @@ int main()
 {
     char dulieu[500];
     fgets(dulieu, 500, stdin);
+    deletespace(dulieu);
     int len = strlen(dulieu);
-    if (dulieu[len - 1] == '\n')
-    {
-        dulieu[len - 1] = '\0';
-        len--;
-    }
     print(dulieu, len);
     return 0;
 }
