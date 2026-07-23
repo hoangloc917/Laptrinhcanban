@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
+#include <ctype.h>// su dung tolower
 int Compare(char s1[], char s2[])
 {
     int i = 0;
